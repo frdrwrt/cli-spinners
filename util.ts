@@ -1,3 +1,4 @@
+
 export const clearCurrentLine = async (
   textEncoder: TextEncoder,
   cols: number
@@ -17,5 +18,5 @@ export const printOnCurrentLine = async (
 
 export const printNewLine = async (textEncoder: TextEncoder, cols: number) => {
   await Deno.stdout.write(textEncoder.encode(`\x1b[${cols}D`));
-  await Deno.stdout.write(textEncoder.encode(`\x1b[1B`));
+  await Deno.stdout.write(textEncoder.encode(`\n`));
 };
